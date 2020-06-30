@@ -74,7 +74,7 @@ This process greatly expands their payment sources and reduces the time of the p
 
 ##### DEVELOPERS
  - Nirmal Lather
- - Parayus Mttal
+ - Parayus Mittal
  - Ravi Kumar Singh
  - Suraj Yadav
  - Tarun Dhankhar
