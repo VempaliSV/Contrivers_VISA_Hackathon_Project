@@ -8,7 +8,7 @@ class Encryption:
     @classmethod
     def encrypt(cls, data: Dict) -> Dict:
         """
-        This method is used for encryption of response or payload which are sent to other api calls...
+        This method is used for encryption of response or payload.
         :param data: This is response in the form of dict like -> {"msg": "Encrypted data"}
         :return: Return decrypted data like -> {"msg": "Decrypted Data"}
         """
