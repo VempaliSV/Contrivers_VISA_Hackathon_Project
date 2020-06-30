@@ -72,4 +72,16 @@ This process greatly expands their payment sources and reduces the time of the p
 - Cross border payment enablement.
 - Multiple Card support (similar to what we have done for e-Wallets)
 
+##### DEVELOPERS
+ - Nirmal Lather
+ - Parayus Mttal
+ - Ravi Kumar Singh
+ - Suraj Yadav
+ - Tarun Dhankhar
+ - Vempali Srividya
+ 
+##### **Special appreciation to Hardik Agarwal (Senior Sowftware Engineer at VISA)**
+
+
+
 
