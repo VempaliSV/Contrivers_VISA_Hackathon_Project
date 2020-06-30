@@ -80,7 +80,7 @@ This process greatly expands their payment sources and reduces the time of the p
  - Tarun Dhankhar
  - Vempali Srividya
  
-##### **Special appreciation to Hardik Agarwal (Senior Software Engineer at VISA)**
+##### **Special appreciation to Hardik Agarwal (Senior Software Engineer at VISA) for guiding us with our project**
 
 
 
