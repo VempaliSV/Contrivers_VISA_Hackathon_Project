@@ -1,0 +1,15 @@
+flask-marshmallow
+marshmallow-sqlalchemy
+marshmallow = "==3.0.0b12"
+cryptography = "==2.6.1"
+urllib3 = "==1.25.9"
+python-dotenv = "*"
+requests = "*"
+Flask = "*"
+Flask-JWT-Extended = "*"
+Flask-RESTful = "*"
+Flask-SQLAlchemy = "*"
+Flask-Cors = "*"
+PyMySQL = "*"
+gunicorn = "*"
+uwsgi = "*"
