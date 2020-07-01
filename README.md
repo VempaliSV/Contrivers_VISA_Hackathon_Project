@@ -13,14 +13,14 @@ This process greatly expands their payment sources and reduces the time of the p
 
 ### Tech
 
-* *JAVA* - 
-* *Material UI* - 
-* *VisaParserSDK-3.2.0* - 
-* *Visa GeneratorSDK-3.2.0* - 
-* *zxing* - 
-* *Flask* -
-* *SQLAlchemy* - 
-* *SQLite/Postgres/MySQL*-
+* *JAVA* - Java programing language used for android development
+* *Material Design* - Material is a design system – backed by open-source code – that helps teams build high-quality digital experiences.
+* *VisaParserSDK-3.2.0* - SDK for use by an Issuer for mobile app development.
+* *Visa GeneratorSDK-3.2.0* - Mobile Push Payment Acquirer/Merchant SDK for QR generation.
+* *zxing* - barcode image processing library implemented in Java, with ports to other languages. 
+* *Flask* - Flask is a micro web framework written in Python.
+* *SQLAlchemy* - SQLAlchemy is an open-source SQL toolkit and object-relational mapper for the Python programming language.
+* *SQLite/Postgres/MySQL*- Relational database management system emphasizing extensibility and SQL compliance. 
 ### Installation
 
 Install the dependencies and devDependencies and start the server.
