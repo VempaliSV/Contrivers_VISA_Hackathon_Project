@@ -1,6 +1,9 @@
 # **Contrivers VISA Hackathon Project**
 
 
+![](https://www.visa.co.in/content/dam/VCOM/Brand/logo-footer.png)
+
+
 ## Overview
 Our idea thrives to promote cashless payments by integrating the usage of E-wallets and VISA payment services.We are providing an Open-Loop transaction system for e-Wallets which are usually a part of the Close-Loop transaction system by leveraging Visa APIs. 
 In the present case scenario, e-Wallets are not admissible in all market segments but with the help of One Visa Connect customers would be able to have a seamless & secure virtual payment experience by being a part of Visa’s global network.
