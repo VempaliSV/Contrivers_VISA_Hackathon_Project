@@ -10,7 +10,7 @@ In the present case scenario, e-Wallets are not admissible in all market segment
 Online merchants and service sellers utilise our solution of a Virtual visa POS Terminal(One Visa Connect). It is a payment gateway which allows them to manually authorise card transactions initiated by the buyer.
 This process greatly expands their payment sources and reduces the time of the payment process, while adding additional security.
 
-![Uploading Web 1920 – 1.jpg…]()
+![Web 1920 – 1](https://user-images.githubusercontent.com/47567238/86273980-a13d9680-bbee-11ea-95b8-e9b3d992ce08.jpg)
 
 
 
