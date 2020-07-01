@@ -21,11 +21,12 @@ public class OTPActivity extends AppCompatActivity {
 
     public void generateOTP(){
         generationTime = new Timestamp(System.currentTimeMillis());
-        Random random = new Random();
-        for(int i=0;i<6;i++){
-            int digit = random.nextInt(10);
-            OTP += String.valueOf(digit);
-        }
+//        Random random = new Random();
+//        for(int i=0;i<6;i++){
+//            int digit = random.nextInt(10);
+//            OTP += String.valueOf(digit);
+//        }
+        OTP = "123456";
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
