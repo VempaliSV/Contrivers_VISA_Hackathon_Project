@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ### Development
 ---
-##### Customer API
+#### Customer API
 
 **Installation**
 
@@ -65,7 +65,7 @@ Project Certificate as cert.pem
 Private Key as privateKey.pem
 SSL Certificate as server.pem
 
-##### Merchant API
+#### Merchant API
 
 **Installation**
 
@@ -101,7 +101,7 @@ Project Certificate as cert.pem
 Private Key as privateKey.pem
 SSL Certificate as server.pem
 
-##### Wallet API
+#### Wallet API
 
 **Installation**
 
