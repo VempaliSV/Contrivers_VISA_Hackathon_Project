@@ -42,11 +42,11 @@ default port http://127.0.0.1:5001/
 ```
 
 **.env.example**
-Set according to your requirements
+Set according to your requirements \
 APP_SECRET_KEY =\
 DATABASE_URI=\
 USERNAME_FOR_VISA_API=\
-PASSWORD_FOR_VISA_API=\
+PASSWORD_FOR_VISA_API=
 
  ##### wallet.py
  ```sh
@@ -60,9 +60,9 @@ url = "Enter MVisa Merchant Push Payment URL"
 ```
 
 **Create a folder VisaCert in main directory**
-Insert 
-Project Certificate as cert.pem
-Private Key as privateKey.pem
+Insert \
+Project Certificate as cert.pem \
+Private Key as privateKey.pem \
 SSL Certificate as server.pem
 
 #### Merchant API
@@ -78,10 +78,10 @@ default port http://127.0.0.1:5002/
 ```
 
 **.env.example**
-Set according to your requirements
-APP_SECRET_KEY =  
-DATABASE_URI=
-USERNAME_FOR_VISA_API=
+Set according to your requirements \
+APP_SECRET_KEY =  \
+DATABASE_URI=\
+USERNAME_FOR_VISA_API=\
 PASSWORD_FOR_VISA_API=
 
  ##### visaNet.py
@@ -96,10 +96,10 @@ url = "Enter Funds Transfer Pull Payment URL"
 ```
 
 **Create a folder VisaCert in main directory**
-Insert 
-Project Certificate as cert.pem
-Private Key as privateKey.pem
-SSL Certificate as server.pem
+Insert \
+Project Certificate as cert.pem \
+Private Key as privateKey.pem \
+SSL Certificate as server.pem 
 
 #### Wallet API
 
@@ -114,7 +114,7 @@ default port http://127.0.0.1:5000/
 ```
 
 **.env.example**
-Set according to your requirements
-WALLET_KEY generate via fernet
-DATABASE_URI=
-SECRET_KEY=
+Set according to your requirements \
+WALLET_KEY generate via fernet \
+DATABASE_URI= \
+SECRET_KEY= 
