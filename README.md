@@ -144,8 +144,8 @@ SECRET_KEY
 #### Customer Application
 **app/src/main/assets**
 ```sh
-Insert\
-RSA Public Key as public.pem\
+Insert
+RSA Public Key as public.pem
 RSA Private Key as private.pem
 ```
 **Login Activity**
@@ -176,7 +176,7 @@ requestLogout.execute(Enter Server Port of Customer API)
 ```
 **HomeActivityFragments/Wallets/FragmentWallets**
 ```sh
-getWallaetAmount
+getWalletAmount
 getWalletAmount.execute(Enter Server Port of Customer API)
 ```
 **HomeActivityFragments/History/FragmentHistory**
