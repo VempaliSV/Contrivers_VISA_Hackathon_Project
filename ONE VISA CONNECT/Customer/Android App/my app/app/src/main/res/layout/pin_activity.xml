@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <com.hanks.passcodeview.PasscodeView
+        android:id="@+id/passcodeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/visaBlue"
+        app:correctStateColor="#F22F4CEF"
+        app:firstInputTip="Enter 4 digit passcode:"
+        app:normalStateColor="#ffffff"
+        app:numberTextColor="#0A0B0B"
+        app:passcodeLength="6"
+        app:passcodeViewType="set_passcode"
+        app:wrongStateColor="#ea2b46" />
+
+</RelativeLayout>

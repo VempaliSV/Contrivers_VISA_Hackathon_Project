@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/wallets"
+        android:enabled="true"
+        android:icon="@drawable/wallets"
+        android:title="@string/wallets"/>
+<!--    <item-->
+<!--        android:id="@+id/add_wallet"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/add_wallet"-->
+<!--        android:title="@string/add_wallet"/>-->
+    <item
+        android:id="@+id/history"
+        android:enabled="true"
+        android:icon="@drawable/history"
+        android:title="@string/history"/>
+</menu>

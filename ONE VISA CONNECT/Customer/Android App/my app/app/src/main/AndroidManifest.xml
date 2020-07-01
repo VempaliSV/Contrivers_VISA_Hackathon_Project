@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.visa_project">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".application.VisaApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/visa_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Visa">
+        <activity android:name=".PaymentResultActivity" />
+        <activity android:name=".GenerateQRActivity" />
+        <activity android:name=".PaymentMethodActivity" />
+        <activity android:name=".OTPActivity" />
+        <activity android:name=".StartActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".ScanQRActivity" />
+        <activity android:name=".PasswordActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_navigation__drawer"
+            android:theme="@style/Theme.Visa.NoActionBar" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".AmountActivity" />
+        <activity android:name=".CardActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

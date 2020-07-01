@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "dbf8855f-ae1b-4df8-83ea-6b5f7842fe3f",
+		"name": "Hackathon_Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"full_name\":\"xyz\",\n\t\"email\":\"lather10110@gmail.com\",\n\t\"password\":\"123456\",\n\t\"mobile_number\":\"9812950111\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/register",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5b0022c-1fa6-4958-be5a-d3fd97278265",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)",
+							"",
+							"pm.environment.set(\"access_token\", jsonData.access_token);",
+							"",
+							"pm.environment.set(\"refresh_token\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"lather10110@gmail.com\",\n\t\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/login",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fee518a9-9bc0-48e8-bf15-e3776d90018b",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)",
+							"",
+							"pm.environment.set(\"access_token\", jsonData.access_token);",
+							"",
+							"pm.environment.set(\"refresh_token\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"lather10110@gmail.com\",\n\t\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/user/9812950111",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"user",
+						"9812950111"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hanks:passcodeview:0.1.2@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/16e7ccba360b731468fe0e61594b6c90/jetified-passcodeview-0.1.2/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/16e7ccba360b731468fe0e61594b6c90/jetified-passcodeview-0.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/16e7ccba360b731468fe0e61594b6c90/jetified-passcodeview-0.1.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hanks/passcodeview/0.1.2/45af76fe53397eee3717ce5680d5a0824be73adc/passcodeview-0.1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hanks/passcodeview/0.1.2/41f70488f67817680ea0acb2d850697696ee0989/passcodeview-0.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

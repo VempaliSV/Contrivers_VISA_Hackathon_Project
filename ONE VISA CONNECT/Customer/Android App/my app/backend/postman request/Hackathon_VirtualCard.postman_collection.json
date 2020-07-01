@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "649b6233-4158-4916-9bc1-c29708b79c71",
+		"name": "Hackathon_VirtualCard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VirtualCard_get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile_number\" : \"9812950111\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/virtual_card",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"virtual_card"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VirtualCard_Generate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile_number\" : \"9812950111\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/virtual_card",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"virtual_card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Amount",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\"acquirerCountryCode\": \"356\",\n\"acquiringBin\": \"408972\",\n\"amount\": \"124.05\",\n\"businessApplicationId\": \"MP\",\n\"cardAcceptor\": {\n\"address\": {\n\"city\": \"KOLKATA\",\n\"country\": \"IN\"\n},\n\"idCode\": \"CA-IDCode-77765\",\n\"name\": \"Visa Inc. USA-Foster City\"\n},\n\"purchaseIdentifier\": {\n\"type\": \"0\",\n\"referenceNumber\": \"REF_123456789123456789123\"\n},\n\"recipientPrimaryAccountNumber\": \"4123640062698797\",\n\"retrievalReferenceNumber\": \"412770451035\",\n\"secondaryId\": \"123TEST\",\n\"senderName\": \"Jasper\",\n\"systemsTraceAuditNumber\": \"451035\",\n\"transactionCurrencyCode\": \"356\",\n\"merchantCategoryCode\": \"5812\",\n\"settlementServiceIndicator\": \"9\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{url1}}/virtual_card/payment/9812950111",
+					"host": [
+						"{{url1}}"
+					],
+					"path": [
+						"virtual_card",
+						"payment",
+						"9812950111"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
