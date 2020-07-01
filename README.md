@@ -134,7 +134,7 @@ DATABASE_URI= \
 SECRET_KEY= 
 
 ### Mobile Application
-### Customer Application
+#### Customer Application
 ```sh
 4-Digit PIN default 1234
 6-Digit OTP default 123456
