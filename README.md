@@ -199,5 +199,5 @@ OnCreate
 requestPayment.execute(Enter Server Port of Customer API)
 ```
 
-#### Merchant Application
+### Merchant Application
 
