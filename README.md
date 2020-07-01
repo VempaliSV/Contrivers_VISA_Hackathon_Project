@@ -142,6 +142,12 @@ DATABASE_URI \
 SECRET_KEY
 
 #### Customer Application
+**app/src/main/assets**
+```sh
+Insert\
+RSA Public Key as public.pem\
+RSA Private Key as private.pem
+```
 **Login Activity**
 ```sh
 Request Login
@@ -200,4 +206,30 @@ requestPayment.execute(Enter Server Port of Customer API)
 ```
 
 ### Merchant Application
-
+**Login Activity**
+```sh
+Request Login
+requestLogin.execute(Enter Server Port of Customer API)
+Request Refresh 
+requestRefresh.execute(Enter Server Port of Customer API)
+```
+**Register Activity**
+```sh
+Request Register
+requestRegister.execute(Enter Server Port of Customer API)
+```
+**Home Activity**
+```sh
+Request Logout
+requestLogout.execute(Enter Server Port of Customer API)
+```
+**Home Activity**
+```sh
+RequestHistory
+requestHistory.execute(Enter Server Port of Customer API)
+```
+**Payment Result Activity**
+```sh
+RequestPayment
+requestPayment.execute(Enter Server Port of Customer API)
+```
