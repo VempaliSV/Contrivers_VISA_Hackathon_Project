@@ -114,7 +114,7 @@ public class GetWalletAmount extends AsyncTask<String, Void, String> implements 
                 JSONArray walletArray = new JSONArray();
                 JSONObject wallet = new JSONObject();
                 wallet.put("walletName", "Demo Wallet");
-                wallet.put("url", "https://nuwallpaperhd.info/wp-content/uploads/2018/01/Awesome-Abstract-Background-Wallpapers.jpg");
+                wallet.put("url", "https://nuwallpaperhd.info/wp-content/uploads/2018/01/Awesome-Abstract-Background-Wallpapers.jpg"); // sample image
                 wallet.put("amount", status);
                 walletArray.put(wallet);
 
@@ -141,6 +141,6 @@ public class GetWalletAmount extends AsyncTask<String, Void, String> implements 
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
         CheckCard checkCard = new CheckCard(context);
-        checkCard.execute("https://virtual-card-auth.herokuapp.com/virtual_card", wallet_name);
+        checkCard.execute("Enter server port" + "/virtual_card", wallet_name);
     }
 }

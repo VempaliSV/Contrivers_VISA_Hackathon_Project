@@ -27,7 +27,7 @@ public class PaymentResultActivity extends AppCompatActivity {
         llProgressBar = findViewById(R.id.llProgressBar);
         llProgressBar.setVisibility(View.VISIBLE);
         RequestPayment requestPayment = new RequestPayment(PaymentResultActivity.this);
-        requestPayment.execute("https://virtual-card-auth.herokuapp.com/virtual_card/payment", getIntent().getStringExtra("payload"));
+        requestPayment.execute("Enter server port" + "/virtual_card/payment", getIntent().getStringExtra("payload"));
     }
 
     @Override

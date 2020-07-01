@@ -107,7 +107,7 @@ public class CheckCard extends AsyncTask<String, Void, String> {
                 }else if(statusCode == 404){
                     // card doesn't exists....make a post request to generate card
                     GenerateCard generateCard = new GenerateCard(context);
-                    generateCard.execute("https://virtual-card-auth.herokuapp.com/virtual_card", wallet_name);
+                    generateCard.execute("Enter server port" + "/virtual_card", wallet_name);
                 }else{
                     llWalletProgressBar.setVisibility(View.GONE);
                     wallets.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);

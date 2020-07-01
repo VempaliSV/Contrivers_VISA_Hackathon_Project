@@ -38,8 +38,9 @@ public class GenerateQRActivity extends AppCompatActivity {
         llProgressBar.setVisibility(View.VISIBLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
         GetPan getPan = new GetPan(GenerateQRActivity.this);
-        getPan.execute("https://virtual-card-auth.herokuapp.com/visa_net/payment", wallet_name, amount);
+        getPan.execute("Enter server port" + "/visa_net/payment", wallet_name, amount);
     }
 
     @Override

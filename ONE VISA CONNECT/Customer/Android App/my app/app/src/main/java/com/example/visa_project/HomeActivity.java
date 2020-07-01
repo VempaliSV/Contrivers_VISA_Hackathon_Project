@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         RequestLogout requestLogout = new RequestLogout(HomeActivity.this);
-        requestLogout.execute("https://virtual-card-auth.herokuapp.com/logout", access_token);
+        requestLogout.execute("Enter server port" + "/logout", access_token);
     }
 
     @Override

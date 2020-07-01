@@ -53,7 +53,7 @@ public class OTPActivity extends AppCompatActivity {
             llProgressBar.setVisibility(View.VISIBLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            verifyOTP.execute("https://virtual-card-auth.herokuapp.com/otp", mobile_number);
+            verifyOTP.execute("Enter server port" + "/otp", mobile_number);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class OTPActivity extends AppCompatActivity {
         generateOTP();
         SendOTP sendOTP = new SendOTP(OTPActivity.this);
         try {
-            sendOTP.execute("https://virtual-card-auth.herokuapp.com/otp", mobile_number, OTP);
+            sendOTP.execute("Enter server port" + "/otp", mobile_number, OTP);
         }catch (Throwable throwable){
             throwable.printStackTrace();
         }

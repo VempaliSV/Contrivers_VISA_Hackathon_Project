@@ -34,7 +34,7 @@ public class FragmentWallets extends Fragment {
         llProgressBar = view.findViewById(R.id.llProgressBar);
         llProgressBar.setVisibility(View.VISIBLE);
         GetWalletAmount getWalletAmount = new GetWalletAmount(getContext(),view);
-        getWalletAmount.execute("https://virtual-card-auth.herokuapp.com/virtual_card");
+        getWalletAmount.execute("Enter server port" + "/virtual_card");
 
         int largePadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing_small);

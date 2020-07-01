@@ -33,7 +33,7 @@ public class FragmentHistory extends Fragment {
         llProgressBar.setVisibility(View.VISIBLE);
         // get history from backend
         RequestHistory requestHistory = new RequestHistory(getContext());
-        requestHistory.execute("https://virtual-card-auth.herokuapp.com/payment/history");
+        requestHistory.execute("Enter server port" + "/payment/history");
 
         int largePadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing_small);

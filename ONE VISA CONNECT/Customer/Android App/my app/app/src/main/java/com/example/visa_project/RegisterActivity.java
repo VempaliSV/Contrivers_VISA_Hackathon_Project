@@ -46,8 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register(String email, String password, String mobileNumber, String username, String country){
         RequestRegister requestRegister = new RequestRegister(RegisterActivity.this);
-        requestRegister.execute("https://virtual-card-auth.herokuapp.com/register", email, password, mobileNumber, username, country);
-        //requestRegister.execute("http://10.0.2.2:5001/register", email, password, mobileNumber, username, country);
+        requestRegister.execute("Enter server port" + "/register", email, password, mobileNumber, username, country);
     }
 
     public boolean isPasswordValid(String password){
