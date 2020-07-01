@@ -15,7 +15,7 @@ privateKeyPath = './VisaCert/privateKey.pem'
 caCertPath = "./VisaCert/server.pem"
 
 
-url = "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pullfundstransactions"
+url = "ENTER VISA FUNDS TRANSFER PULL FUNDS URL"
 
 headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
 timeout = 10
