@@ -14,24 +14,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.example.merchantapp.API.RequestRefresh;
 import com.example.merchantapp.MLE.RSA;
-
-
 import com.example.merchantapp.API.RequestLogin;
-
 import com.example.merchantapp.SessionManager.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 public class LoginActivity extends AppCompatActivity {
     //SharedPreferences sharedPreferences;   // // Using SessionManger instead

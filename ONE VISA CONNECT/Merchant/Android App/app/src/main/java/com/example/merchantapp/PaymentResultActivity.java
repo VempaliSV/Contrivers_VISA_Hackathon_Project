@@ -1,18 +1,13 @@
 package com.example.merchantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.example.merchantapp.API.RequestPayment;
-import com.example.merchantapp.HomeActivity;
-import com.example.merchantapp.R;
-
 
 public class PaymentResultActivity extends AppCompatActivity {
     public static LinearLayout llProgressBar;

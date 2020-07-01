@@ -1,14 +1,12 @@
 package com.example.merchantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-        import android.annotation.SuppressLint;
-        import android.os.Bundle;
-        import android.view.KeyEvent;
-        import android.view.View;
-        import android.widget.TextView;
-
-        import static com.example.merchantapp.HomeActivity.session;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import static com.example.merchantapp.HomeActivity.session;
 
 public class AccountActivity extends AppCompatActivity {
 

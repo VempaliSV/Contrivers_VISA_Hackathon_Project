@@ -1,7 +1,6 @@
 package com.example.merchantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -16,13 +15,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.example.merchantapp.API.RequestRegister;
 import com.example.merchantapp.utils.PasswordStrength;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
