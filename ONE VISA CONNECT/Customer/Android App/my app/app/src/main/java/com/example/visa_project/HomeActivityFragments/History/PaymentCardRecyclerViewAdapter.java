@@ -34,7 +34,9 @@ public class PaymentCardRecyclerViewAdapter extends RecyclerView.Adapter<Payment
             holder.walletName.setText(("Done by " + payment.wallet_name));
             holder.amountPaid.setText(("Amount : " + payment.amount));
             holder.orderNumber.setText(("Order Number : " + payment.transaction_id));
-            holder.dateTime.setText(payment.transaction_time + " GMT");
+            String time = payment.transaction_time;
+            String timeNew  = time.substring(0, 10) + " " + time.substring(11) + " GMT";
+            holder.dateTime.setText(timeNew);
             holder.merchantOperator.setText(("Paid to : " + payment.merchant_name));
             holder.orderResponse.setText(("Payment : "+ payment.status));
         }
