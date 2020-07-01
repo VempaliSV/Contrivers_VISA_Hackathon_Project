@@ -142,6 +142,12 @@ DATABASE_URI \
 SECRET_KEY
 
 #### Customer Application
-
+**Login Activity**
+```sh
+Request Login
+url = Enter Server Port of Customer API
+Request Refresh 
+url = Enter Server Port of Customer API
+```
 
  
