@@ -49,13 +49,13 @@ DATABASE_URI=\
 USERNAME_FOR_VISA_API=\
 PASSWORD_FOR_VISA_API=
 
- ##### wallet.py
+ **wallet.py**
  ```sh
 default port http://127.0.0.1:5000/
 ```
  port = Set according to your configured port
 
-##### visaAPI.py
+**visaAPI.py**
 ```sh
 url = "Enter MVisa Merchant Push Payment URL"
 ```
@@ -85,13 +85,13 @@ DATABASE_URI=\
 USERNAME_FOR_VISA_API=\
 PASSWORD_FOR_VISA_API=
 
- ##### visaNet.py
+ **visaNet.py**
  ```sh
 default port http://127.0.0.1:5001/
 ```
  port = Set according to your configured port
 
-##### pullFunds.py
+**pullFunds.py**
 ```sh
 url = "Enter Funds Transfer Pull Payment URL"
 ```
