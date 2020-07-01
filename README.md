@@ -19,7 +19,7 @@ This process greatly expands their payment sources and reduces the time of the p
 * *Visa GeneratorSDK-3.2.0* - 
 * *Flask* -
 * *SQLAlchemy* - 
-* *Postgres/SQLite/MySQL
+* *Postgres/SQLite/MySQL*-
 ### Installation
 
 Install the dependencies and devDependencies and start the server.
