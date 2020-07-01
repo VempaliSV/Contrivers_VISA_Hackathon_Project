@@ -18,5 +18,5 @@ class Decryption:
         for i in data:
             decrypted_data[i] = \
                 f.decrypt(bytes(data[i], 'ascii')).decode('ascii')
-        # print(decrypted_data)
+
         return decrypted_data
