@@ -59,7 +59,7 @@ default port http://127.0.0.1:5000/
 url = "Enter MVisa Merchant Push Payment URL"
 ```
 
-**Create a folder VisaCert in main directory**
+**Create a folder VisaCert in main directory**\
 Insert \
 Project Certificate as cert.pem \
 Private Key as privateKey.pem \
@@ -95,7 +95,7 @@ default port http://127.0.0.1:5001/
 url = "Enter Funds Transfer Pull Payment URL"
 ```
 
-**Create a folder VisaCert in main directory**
+**Create a folder VisaCert in main directory**\
 Insert \
 Project Certificate as cert.pem \
 Private Key as privateKey.pem \
