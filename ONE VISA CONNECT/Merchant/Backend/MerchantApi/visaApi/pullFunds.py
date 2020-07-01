@@ -34,7 +34,7 @@ class FundsTransfer(Resource):
                               json=payload,
                               timeout=timeout)
         except Exception as e:
-            print(e)
+            return None
 
         return r
 
@@ -53,7 +53,6 @@ class FundsTransfer(Resource):
                 timeout=timeout
             )
         except Exception as e:
-            print(e)
             return None
 
         return r
