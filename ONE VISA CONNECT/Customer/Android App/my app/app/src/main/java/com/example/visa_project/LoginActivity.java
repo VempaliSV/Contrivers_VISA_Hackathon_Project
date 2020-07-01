@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class LoginActivity extends AppCompatActivity {
     public static SessionManager session;
     public static LinearLayout llProgressBar;

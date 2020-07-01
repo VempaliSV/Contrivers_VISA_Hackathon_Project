@@ -1,7 +1,6 @@
 package com.example.merchantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.merchantapp.utils.ISOCodes;
 
 public class StartActivity extends AppCompatActivity {

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.example.visa_project.API.GetPan;
 
 public class GenerateQRActivity extends AppCompatActivity {

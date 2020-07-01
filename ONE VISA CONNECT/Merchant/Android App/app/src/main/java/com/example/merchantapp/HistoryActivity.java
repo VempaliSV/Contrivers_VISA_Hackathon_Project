@@ -3,15 +3,12 @@ package com.example.merchantapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-
 import com.example.merchantapp.API.RequestHistory;
 import com.example.merchantapp.HistoryRecycleViewHolder.PaymentGridItemDecoration;
-
 
 public class HistoryActivity extends AppCompatActivity {
     public static RecyclerView recyclerView = null;

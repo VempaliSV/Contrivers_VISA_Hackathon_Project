@@ -1,12 +1,10 @@
 package com.example.merchantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -15,7 +13,6 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.visa.mvisa.QRCodeTag;
 import com.visa.mvisa.generator.InputInvalidException;
 import com.visa.mvisa.generator.QrCodeDataGenerator;
-
 import java.util.HashMap;
 import static com.example.merchantapp.HomeActivity.session;
 
