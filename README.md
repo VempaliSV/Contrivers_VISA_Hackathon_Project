@@ -31,7 +31,7 @@ pip install -r requirements.txt
 #### Android Dependecies
 ##### Build Gradle Requirments
 Android Studio Version 4.0\
-Minimum SDK version 21 \
+Minimum SDK version 21\
 Target SDK version 28\
 Compile SDK version 28\
 Version Code 1
@@ -52,10 +52,10 @@ default port http://127.0.0.1:5001/
 
 **.env.example** \
 Set according to your requirements \
-APP_SECRET_KEY =\
-DATABASE_URI=\
-USERNAME_FOR_VISA_API=\
-PASSWORD_FOR_VISA_API=
+APP_SECRET_KEY\
+DATABASE_URI\
+USERNAME_FOR_VISA_API\
+PASSWORD_FOR_VISA_API
 
  **wallet.py**
  ```sh
@@ -93,10 +93,10 @@ default port http://127.0.0.1:5002/
 
 **.env.example**\
 Set according to your requirements \
-APP_SECRET_KEY =  \
-DATABASE_URI=\
-USERNAME_FOR_VISA_API=\
-PASSWORD_FOR_VISA_API=
+APP_SECRET_KEY \
+DATABASE_URI\
+USERNAME_FOR_VISA_API\
+PASSWORD_FOR_VISA_API
 
  **visaNet.py**
  ```sh
@@ -130,8 +130,8 @@ default port http://127.0.0.1:5000/
 **.env.example**\
 Set according to your requirements \
 WALLET_KEY generate via fernet \
-DATABASE_URI= \
-SECRET_KEY= 
+DATABASE_URI \
+SECRET_KEY
 
 ### Mobile Application
 #### Customer Application
