@@ -11,12 +11,6 @@ Online merchants and service sellers utilise our solution of a Virtual visa POS 
 This process greatly expands their payment sources and reduces the time of the payment process, while adding additional security.
 
 
-
-![customer app workflow](https://user-images.githubusercontent.com/47567238/86276531-aac8fd80-bbf2-11ea-8259-4ab06366f2cf.jpg)
-
-
-
-
 ## Tech
 
 * *JAVA* - Java programing language used for android development
@@ -45,6 +39,12 @@ Compile SDK version 28\
 Version Code 1
 
 #### Customer Application
+
+
+
+![customer app workflow](https://user-images.githubusercontent.com/47567238/86276531-aac8fd80-bbf2-11ea-8259-4ab06366f2cf.jpg)
+
+
 ```sh
 4-Digit PIN default 1234
 6-Digit OTP default 123456
@@ -130,6 +130,9 @@ Private Key as privateKey.pem \
 SSL Certificate as server.pem 
 
 #### Wallet API
+
+
+![merchant app workflow](https://user-images.githubusercontent.com/47567238/86277030-9fc29d00-bbf3-11ea-981f-630e60735c38.jpg)
 
 **Installation**
 
