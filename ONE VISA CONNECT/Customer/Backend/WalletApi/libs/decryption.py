@@ -12,7 +12,7 @@ class Decryption:
         :return: Return decrypted data like -> {"msg": "Decrypted Data"}
         """
         # Decryption Key Saved in Environment Variable
-        key = os.environ.get("wallet_key")
+        key = os.environ.get("WALLET_KEY")
         f = Fernet(key)
         decrypted_data = {}
         for i in data:
