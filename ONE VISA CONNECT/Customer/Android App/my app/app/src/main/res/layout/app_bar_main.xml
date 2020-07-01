@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/visaBlue"
-            app:title="@string/app_name"
+            app:title="@string/nav_name"
             app:popupTheme="@style/Theme.Visa.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

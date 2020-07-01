@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">One Visa Connect</string>
+    <string name="app_name">Visa Pay</string>
+    <string name="nav_name">One Visa Connect</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="hint_confirm_password">Confirm Password</string>
