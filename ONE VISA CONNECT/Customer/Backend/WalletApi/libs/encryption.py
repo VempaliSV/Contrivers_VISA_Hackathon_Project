@@ -12,7 +12,7 @@ class Encryption:
         :param data: This is response in the form of dict like -> {"msg": "Encrypted data"}
         :return: Return decrypted data like -> {"msg": "Decrypted Data"}
         """
-        key = os.environ.get("wallet_key")
+        key = os.environ.get("WALLET_KEY")
         wallet_key = bytes(key, 'ascii')
         f = Fernet(wallet_key)
         encrypted_data = {}

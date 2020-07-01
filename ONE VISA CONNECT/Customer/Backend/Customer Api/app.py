@@ -17,7 +17,7 @@ load_dotenv()
 app = Flask(__name__)
 app.config.from_object("default_config")
 
-app.secret_key = os.getenv("SECRET_KEY")
+app.secret_key = os.getenv("APP_SECRET_KEY")
 api = Api(app)
 
 
