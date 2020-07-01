@@ -21,7 +21,7 @@ class VisaNet:
             }
             :return: response from auth api.
         """
-        url = "https://virtual-card-auth.herokuapp.com/visa_net/payment"
+        url = "Enter VISA NET URL"
 
         try:
             r = requests.put(url, json=payload, headers=headers, timeout=timeout)
@@ -42,7 +42,7 @@ class VisaNet:
             }
             :return: response from auth api.
         """
-        url = "https://virtual-card-auth.herokuapp.com/visa_net/confirm/payment"
+        url = "ENTER VISA NET CONFIRMATION URL"
 
         try:
             r = requests.put(url, json=payload, headers=headers, timeout=timeout)
