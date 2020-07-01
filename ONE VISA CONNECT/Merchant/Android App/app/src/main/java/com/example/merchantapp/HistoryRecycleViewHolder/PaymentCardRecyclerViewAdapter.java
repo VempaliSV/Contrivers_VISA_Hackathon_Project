@@ -37,7 +37,9 @@ public class PaymentCardRecyclerViewAdapter extends RecyclerView.Adapter<Payment
             holder.walletName.setText(("Done by VISA"));
             holder.amountReceived.setText(("Amount : " + payment.amount));
             holder.transactionId.setText(("Order Number : " + payment.transaction_id));
-            holder.transactionTime.setText(payment.transaction_time);
+            String time = payment.transaction_time;
+            String timeNew  = time.substring(0, 10) + " " + time.substring(11) + " GMT";
+            holder.transactionTime.setText(timeNew);
             holder.customerMobile.setText(("Paid by : " + payment.customer_mobile_number));
             if(payment.status.equals("true")){
                 holder.orderResponse.setText(("Payment Received"));
