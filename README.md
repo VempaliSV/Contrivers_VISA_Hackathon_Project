@@ -38,8 +38,8 @@ Version Code 1
 
 ### Development
 ---
-###*Customer*
-
+### Customer
+---
 #### Customer API
 
 **Installation**
@@ -130,4 +130,4 @@ WALLET_KEY generate via fernet \
 DATABASE_URI= \
 SECRET_KEY= 
 
-#### 
+ 
