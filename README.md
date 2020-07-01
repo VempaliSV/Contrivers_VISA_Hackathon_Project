@@ -145,9 +145,56 @@ SECRET_KEY
 **Login Activity**
 ```sh
 Request Login
-url = Enter Server Port of Customer API
+requestLogin.execute(Enter Server Port of Customer API)
 Request Refresh 
-url = Enter Server Port of Customer API
+requestRefresh.execute(Enter Server Port of Customer API)
+```
+**Register Activity**
+
+```sh
+Request Register
+requestRegister.execute(Enter Server Port of Customer API)
 ```
 
- 
+**OTP Activity**
+```sh
+Send OTP
+sendOtp.execute(Enter Server Port of Customer API)
+Verify OTP
+verifyOTP.execute(Enter Server Port of Customer API)
+```
+**Home Activity**
+```sh
+Request Logout
+requestLogout.execute(Enter Server Port of Customer API)
+```
+**HomeActivityFragments/Wallets/FragmentWallets**
+```sh
+getWallaetAmount
+getWalletAmount.execute(Enter Server Port of Customer API)
+```
+**HomeActivityFragments/History/FragmentHistory**
+```sh
+RequestHistory
+requestHistory.execute(Enter Server Port of Customer API)
+```
+**API/GetWalletAmount**
+```sh
+getWalletAmount
+getWalletAmount.execute(Enter Server Port of Customer API)
+```
+**API/CheckCard**
+```sh
+OnPostExecute
+checkCard.execute(Enter Server Port of Customer API)
+```
+**GenrateQRActivity**
+```sh
+OnCreate
+getPan.execute(Enter Server Port of Customer API)
+```
+**PaymentResultActivity**
+```sh
+OnCreate
+requestPayment.execute(Enter Server Port of Customer API)
+```
