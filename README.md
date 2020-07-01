@@ -41,7 +41,7 @@ pip install -r requirements.txt
 default port http://127.0.0.1:5001/
 ```
 
-**.env.example**
+**.env.example** \
 Set according to your requirements \
 APP_SECRET_KEY =\
 DATABASE_URI=\
@@ -77,7 +77,7 @@ pip install -r requirements.txt
 default port http://127.0.0.1:5002/
 ```
 
-**.env.example**
+**.env.example**\
 Set according to your requirements \
 APP_SECRET_KEY =  \
 DATABASE_URI=\
@@ -113,7 +113,7 @@ pip install -r requirements.txt
 default port http://127.0.0.1:5000/
 ```
 
-**.env.example**
+**.env.example**\
 Set according to your requirements \
 WALLET_KEY generate via fernet \
 DATABASE_URI= \
