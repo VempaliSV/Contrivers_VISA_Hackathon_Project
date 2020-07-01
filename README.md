@@ -168,12 +168,12 @@ verifyOTP.execute(Enter Server Port of Customer API)
 Request Logout
 requestLogout.execute(Enter Server Port of Customer API)
 ```
-**HomeActivityFragmetns/Wallets/FragmaentWallets**
+**HomeActivityFragments/Wallets/FragmentWallets**
 ```sh
 getWallaetAmount
 getWalletAmount.execute(Enter Server Port of Customer API)
 ```
-**HomeActivityFragmetns/History/FragmaentHistory**
+**HomeActivityFragments/History/FragmentHistory**
 ```sh
 RequestHistory
 requestHistory.execute(Enter Server Port of Customer API)
@@ -193,7 +193,7 @@ checkCard.execute(Enter Server Port of Customer API)
 OnCreate
 getPan.execute(Enter Server Port of Customer API)
 ```
-**PaymentRsultActivity**
+**PaymentResultActivity**
 ```sh
 OnCreate
 requestPayment.execute(Enter Server Port of Customer API)
