@@ -59,7 +59,7 @@ class UserRegister(Resource):
         if UserModel.find_user_by_mobile_number(user.mobile_number):
             return {"msg": USER_ALREADY_EXISTS.format(user.mobile_number)}, 400
 
-        user.password = cipher.encrypt(user.password)
+        
         user.save_to_db()
         return {"msg": USER_CREATED.format(user.email)}, 201
 
@@ -91,15 +91,13 @@ class UserLogin(Resource):
         }
         """
         json_data = request.get_json()
-        json_data["email"] = rsa.decrypt(json_data["email"])
-        json_data["password"] = rsa.decrypt(json_data["password"])
         user_data = user_schema.load(json_data, partial=("full_name", "mobile_number"))
         user = UserModel.find_user_by_email(email=user_data.email)
 
         if not user:
             return {"msg": USER_NOT_FOUND.format(user_data.email)}, 401
 
-        password = cipher.decrypt(user.password)
+        
         if password != user_data.password:
             return {"msg": INVALID_PASSWORD}, 401
         elif not user.activated:
@@ -146,8 +144,6 @@ class UserConfirm(Resource):
         }
         """
         json_data = request.get_json()
-        json_data["mobile_number"] = rsa.decrypt(json_data["mobile_number"])
-        otp = rsa.decrypt(json_data["OTP"])
         user_data = user_schema.load(json_data, partial=("full_name", "email", "password"))
         user = UserModel.find_user_by_mobile_number(mobile_number=json_data["mobile_number"])
         if not user:
@@ -169,7 +165,6 @@ class UserConfirm(Resource):
         }
         """
         json_data = request.get_json()
-        json_data["mobile_number"] = rsa.decrypt(json_data["mobile_number"])
         user_data = user_schema.load(json_data, partial=("full_name", "email", "password"))
         user = UserModel.find_user_by_mobile_number(mobile_number=user_data.mobile_number)
         if not user:
