@@ -41,10 +41,6 @@ Version Code 1
 #### Customer Application
 
 
-
-![customer app workflow](https://user-images.githubusercontent.com/47567238/86276531-aac8fd80-bbf2-11ea-8259-4ab06366f2cf.jpg)
-
-
 ```sh
 4-Digit PIN default 1234
 6-Digit OTP default 123456
@@ -131,9 +127,6 @@ SSL Certificate as server.pem
 
 #### Wallet API
 
-
-![merchant app workflow](https://user-images.githubusercontent.com/47567238/86277030-9fc29d00-bbf3-11ea-981f-630e60735c38.jpg)
-
 **Installation**
 
 ```sh
@@ -151,6 +144,11 @@ DATABASE_URI \
 SECRET_KEY
 
 #### Customer Application
+
+
+![customer app workflow](https://user-images.githubusercontent.com/47567238/86276531-aac8fd80-bbf2-11ea-8259-4ab06366f2cf.jpg)
+
+
 **app/src/main/assets**
 ```sh
 Insert
@@ -215,6 +213,9 @@ requestPayment.execute(Enter Server Port of Customer API)
 ```
 
 ### Merchant Application
+
+![merchant app workflow](https://user-images.githubusercontent.com/47567238/86277030-9fc29d00-bbf3-11ea-981f-630e60735c38.jpg)
+
 **Login Activity**
 ```sh
 Login
