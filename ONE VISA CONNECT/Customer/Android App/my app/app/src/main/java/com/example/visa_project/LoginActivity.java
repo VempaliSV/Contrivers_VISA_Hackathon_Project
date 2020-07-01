@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.visa_project.API.RequestLogin;
 import com.example.visa_project.API.RequestRefresh;
 import com.example.visa_project.MLE.RSA;
@@ -23,16 +22,13 @@ import com.example.visa_project.SessionManager.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
-    //SharedPreferences sharedPreferences;   // // Using SessionManger instead
     public static SessionManager session;
     public static LinearLayout llProgressBar;
     Animation loginAnim;
@@ -53,11 +49,8 @@ public class LoginActivity extends AppCompatActivity {
     public void login(String email, String password) throws Throwable {
         RSA cipher = new RSA(LoginActivity.this);
 
-        //String encryptedEmail = cipher.encrypt(email);
-        //String encryptedPassword  = cipher.encrypt(password);
         RequestLogin requestLogin = new RequestLogin(LoginActivity.this);
         requestLogin.execute("https://virtual-card-auth.herokuapp.com/login", email, password);
-        //requestLogin.execute("http://10.0.2.2:5001/login", email, password);
     }
 
     public void startForgetPassword(View view){

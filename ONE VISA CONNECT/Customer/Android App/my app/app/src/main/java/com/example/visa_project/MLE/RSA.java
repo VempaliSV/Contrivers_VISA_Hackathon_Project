@@ -39,7 +39,7 @@ public class RSA {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(
-                    new InputStreamReader(context.getAssets().open("public.pem"), "UTF-8"));
+                    new InputStreamReader(context.getAssets().open("Put your public key in assets and Enter its name here"), "UTF-8"));
             String line;
             while ((line = reader.readLine()) != null) {
                 keyString += line;
@@ -78,7 +78,7 @@ public class RSA {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(
-                    new InputStreamReader(context.getAssets().open("private.pem"), "UTF-8"));
+                    new InputStreamReader(context.getAssets().open("Put your private key in assets and Enter its name here"), "UTF-8"));
             String line;
             while ((line = reader.readLine()) != null) {
                 keyString += line;
