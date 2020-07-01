@@ -3,10 +3,10 @@
 
 ### Overview
 Our idea thrives to promote cashless payments by integrating the usage of E-wallets and VISA payment services.We are providing an Open-Loop transaction system for e-Wallets which are usually a part of the Close-Loop transaction system by leveraging Visa APIs. 
-In the present case scenario, e-Wallets are not admissible in all market segments but with the help of Visa Pay customers would be able to have a seamless & secure virtual payment experience by being a part of Visa’s global network.
+In the present case scenario, e-Wallets are not admissible in all market segments but with the help of One Visa Connect customers would be able to have a seamless & secure virtual payment experience by being a part of Visa’s global network.
 
  With the incredibly rapid development of digital marketing, a need for a more secure and stable method of receiving payments online among retail merchants and stores everywhere has risen .
-Online merchants and service sellers utilise our solution of a Virtual visa POS Terminal. It is a payment gateway which allows them to manually authorise card transactions initiated by the buyer.
+Online merchants and service sellers utilise our solution of a Virtual visa POS Terminal(One Visa Connect). It is a payment gateway which allows them to manually authorise card transactions initiated by the buyer.
 This process greatly expands their payment sources and reduces the time of the payment process, while adding additional security.
 
 
