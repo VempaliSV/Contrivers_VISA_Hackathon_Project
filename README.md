@@ -43,10 +43,10 @@ default port http://127.0.0.1:5001/
 
 **.env.example**
 Set according to your requirements
-APP_SECRET_KEY =/
-DATABASE_URI=/
-USERNAME_FOR_VISA_API=/
-PASSWORD_FOR_VISA_API=/
+APP_SECRET_KEY =\
+DATABASE_URI=\
+USERNAME_FOR_VISA_API=\
+PASSWORD_FOR_VISA_API=\
 
  ##### wallet.py
  ```sh
