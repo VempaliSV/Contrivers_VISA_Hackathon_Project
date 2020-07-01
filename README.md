@@ -74,6 +74,11 @@ Project Certificate as cert.pem \
 Private Key as privateKey.pem \
 SSL Certificate as server.pem
 
+**MLE Directory**
+Insert\
+RSA Public Key as public.pem\
+RSA Private Key as private.pem\
+
 #### Merchant API
 
 **Installation**
