@@ -38,8 +38,6 @@ Version Code 1
 
 ### Development
 ---
-### Customer
----
 #### Customer API
 
 **Installation**
