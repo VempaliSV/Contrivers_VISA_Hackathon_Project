@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
@@ -17,9 +18,11 @@ from resource.merchant import (
 )
 
 from resource.history import History
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://cdlvssvkcndjxs:063d2145766954c50cc0ec5a2d915903ec37a2a8d8c3a553dff53c75211c8208@ec2-34-194-198-176.compute-1.amazonaws.com:5432/d2t5dqf8i41ce4"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["PROPAGATE_EXCEPTIONS"] = True
 app.config["JWT_BLACKLIST_ENABLED"] = True  # enable blacklist feature
@@ -27,13 +30,13 @@ app.config["JWT_BLACKLIST_TOKEN_CHECK"] = [
     "access",
     "refresh"
 ]  # allowing blacklisting for access and refresh tokens
-app.secret_key = "visa"
+app.secret_key = os.environ.get("APP_SECRET_KEY")
 api = Api(app)
 
 
-# @app.before_first_request
-# def create_tables():
-#     db.create_all()
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 
 jwt = JWTManager(app)
@@ -54,6 +57,6 @@ api.add_resource(History, "/transaction/history")
 
 
 if __name__ == "__main__":
-    # db.init_app(app)
+    db.init_app(app)
     ma.init_app(app)
     app.run(port=5002, debug=True)

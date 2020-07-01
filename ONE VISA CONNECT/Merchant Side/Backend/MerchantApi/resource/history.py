@@ -15,9 +15,11 @@ class History(Resource):
     @classmethod
     @jwt_required
     def get(cls):
+        """
+        :return: The History of transactions of the person who is logged in.
+        """
         _id = get_jwt_identity()
         merchant = MerchantModel.find_merchant_by_id(_id)
-        print(merchant_schema.dump(merchant))
         try:
             history_details = HistoryModel.find_by_mobile_number(merchant.mobile_number)
         except:

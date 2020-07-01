@@ -1,3 +1,4 @@
+import os
 import requests
 import pprint as pp
 import json
@@ -5,15 +6,14 @@ import time
 from flask import request, Flask, jsonify
 from flask_restful import Resource, Api
 
-userName = '8GFE0M5K05DRU333DPRB21haM32rE3BRpRxawIqOoTTlE1h78'
-password = 'EhjXxl6b6'
+userName = os.environ.get("USERNAME_FOR_VISA_API")
+password = os.environ.get("PASSWORD_FOR_VISA_API")
 
+# You need to insert these certificates in VisaCert folder.
 certificatePath = './VisaCert/cert.pem'
 privateKeyPath = './VisaCert/privateKey.pem'
 caCertPath = "./VisaCert/server.pem"
 
-apiKey = 'API_KEY'
-sharedSecret = "SHARED_SECRET_KEY"
 
 url = "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pullfundstransactions"
 
@@ -35,9 +35,8 @@ class FundsTransfer(Resource):
                               timeout=timeout)
         except Exception as e:
             print(e)
-        response = jsonify(r.json())
-        response.status_code = r.status_code
-        return response
+
+        return r
 
     @classmethod
     def merchant_pull_payments_get_response(cls, status_identifier):
@@ -57,6 +56,4 @@ class FundsTransfer(Resource):
             print(e)
             return None
 
-        response = jsonify(r.json())
-        response.status_code = r.status_code
-        return response
+        return r

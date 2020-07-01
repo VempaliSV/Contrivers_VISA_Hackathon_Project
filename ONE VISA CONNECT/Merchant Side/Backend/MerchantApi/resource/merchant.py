@@ -45,18 +45,41 @@ PAYMENT_CANNOT_BE_COMPLETED = "Payment Can not Be Completed Due To Insufficient 
 class MerchantRegister(Resource):
     @classmethod
     def post(cls):
+        """
+        Used for registration of merchant..
+        payload={
+            "name":***********,
+            "email":**********,
+            "password":*******,
+            "mobile_number":**,
+            "state":**********,
+            "country":********,
+            "acquirerCountryCode":****,
+            "zipCode": ********
+        }
+        :return: {"msg": error message or merchant created message}
+        """
         merchant = merchant_schema.load(request.get_json())
+
         if MerchantModel.find_merchant_by_email(merchant.email):
             return {"msg": MERCHANT_ALREADY_EXISTS.format(merchant.email)}, 400
+
         if MerchantModel.find_merchant_by_mobile_number(merchant.mobile_number):
             return {"msg": MERCHANT_ALREADY_EXISTS.format(merchant.mobile_number)}, 400
+
+        # maps country name to country code present in libs.countryCode file
         merchant.acquirerCountryCode = countryCdoe[merchant.country]
+
+        # Generates a unique TerminalId
         terminalId = str(uuid.uuid4().int >> 32)[0:8]
         while terminalId in TerminalId:
             terminalId = str(uuid.uuid4().int >> 32)[0:8]
+
+        # Generates a unique idCode
         idCode = str(uuid.uuid4().int >> 32)[0:15]
         while idCode in IdCode:
             idCode = str(uuid.uuid4().int >> 32)[0:15]
+
         try:
             merchant.terminalId = terminalId
             merchant.idCode = idCode
@@ -71,6 +94,15 @@ class MerchantRegister(Resource):
 class MerchantLogin(Resource):
     @classmethod
     def post(cls):
+        """
+        payload= {
+            "email":*************,
+            "password":**********
+        }
+        :return: Error message if credentials are not valid.
+        if they are valid
+        return {"access_token":******************, "refresh_token":*********}
+        """
         json_data = request.get_json()
         merchant_email = json_data["email"]
         merchant_password = json_data["password"]
@@ -79,8 +111,6 @@ class MerchantLogin(Resource):
             return {"msg": MERCHANT_NOT_FOUND.format(merchant_email)}, 401
         elif merchant.password != merchant_password:
             return {"msg": INVALID_PASSWORD}, 401
-        # elif not merchant.activated:
-        #     return {"msg": MERCHANT_NOT_CONFIRMED.format(merchant.mobile_number)}, 400
         
         access_token = create_access_token(identity=merchant.id, fresh=True)
         refresh_token = create_refresh_token(identity=merchant.id)
@@ -91,22 +121,13 @@ class MerchantLogin(Resource):
 class Merchant(Resource):
     @classmethod
     @jwt_required
-    def get(cls):  # get using phone number (can be changed per use case)
+    def get(cls):
+        # finding identity of using access_token
         _id = get_jwt_identity()
         merchant = MerchantModel.find_merchant_by_id(_id)
         if not merchant:
             return {"msg": MERCHANT_NOT_FOUND}, 404
         return merchant_schema.dump(merchant), 200
-
-    # # just for testing
-    # @classmethod
-    # def delete(cls, mobile_number):
-    #     merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=mobile_number)
-    #     if not merchant:
-    #         return {"msg": MERCHANT_NOT_FOUND.format(mobile_number)}, 404
-    # 
-    #     merchant.delete_from_db()
-    #     return {"msg": MERCHANT_DELETED.format(merchant.email)}, 200
 
 
 class MerchantLogout(Resource):
@@ -131,6 +152,10 @@ class ReceivePayment(Resource):
     @classmethod
     @jwt_required
     def post(cls):
+        """
+        This method is used when merchant scans a Qr code of customer and send a pull payment request.
+        :return: msg according to status of transaction
+        """
         _id = get_jwt_identity()
         payload = request.get_json()
 
@@ -138,6 +163,7 @@ class ReceivePayment(Resource):
         if merchant is None:
             return {"msg": INTERNAL_SERVER_ERROR}, 500
 
+        # Setting essential fields of Payload for pull funds transfer call
         payload["acquirerCountryCode"] = merchant.acquirerCountryCode
         payload["acquiringBin"] = merchant.acquiringBin
         payload["businessApplicationId"] = merchant.businessApplicationId
@@ -152,6 +178,7 @@ class ReceivePayment(Resource):
             "terminalId": merchant.terminalId
         }
 
+        # Generates a unique system trace audit number.
         systemsTraceAuditNumber = str(uuid.uuid4().int >> 32)[0:6]
         while systemsTraceAuditNumber in SystemsTraceAuditNumber:
             systemsTraceAuditNumber = str(uuid.uuid4().int >> 32)[0:6]
@@ -162,14 +189,24 @@ class ReceivePayment(Resource):
         payload["retrievalReferenceNumber"] = RetrievalNo.No() + str(systemsTraceAuditNumber)
 
         payload["senderPrimaryAccountNumber"] = "4895142232120006"
-        # print(payload)
 
+        # customer mobile number present in the qr scanned by merchant
         mobile_number = ""
+        # customer wallet name
         wallet_name = ""
+
+        # FLag tells whether we get mobile number from customer details or not.
         flag = False
+
+        # status code is for transaction shows whether the transaction was successful or not
         status_code = False
+
         if "mobile_number" in payload:
+
+            # mobile_number is present in payload
             flag = True
+
+            # Setting payload for call to AuthApi for Confirmation of amount present in wallet of sender
             payloadAuthApi = {}
             mobile_number = payload["mobile_number"]
             wallet_name = payload["wallet_name"]
@@ -180,10 +217,12 @@ class ReceivePayment(Resource):
             payloadAuthApi["merchant_name"] = merchant.name
             payloadAuthApi["amount"] = payload["amount"]
             payloadAuthApi["systemsTraceAuditNumber"] = systemsTraceAuditNumber
+
+            # call to authApi for confirmation of amount entered by customer.
             r = VisaNet.AmountConfirmation(payloadAuthApi)
-            print(r)
-            print(r.json())
+
             if r.status_code != 200:
+                # Updating History for transaction failure.
                 history = HistoryModel(amount=payload["amount"],
                                        transaction_id=systemsTraceAuditNumber,
                                        transaction_time=payload["localTransactionDateTime"],
@@ -195,10 +234,12 @@ class ReceivePayment(Resource):
                                        )
                 history.save_to_db()
                 return {'msg': PAYMENT_CANNOT_BE_COMPLETED}, 400
-            
+
+        #    deleting nonessential fields of payload
         if "wallet_name" in payload:
             del(payload["wallet_name"])
-            
+
+        #   Sending pull payments request to helper function
         response = FundsTransfer.merchant_pull_payments_post_response(payload)
 
         if response.status_code != 200:
@@ -209,7 +250,10 @@ class ReceivePayment(Resource):
                     'systemsTraceAuditNumber': systemsTraceAuditNumber,
                     'code': response.status_code
                 }
+                # Sending request for rollback of payment denoted by code of payload
                 r = VisaNet.TransactionConfirmation(payloadAuthApi)
+
+            #   setting history for payment failure
             history = HistoryModel(amount=payload["amount"],
                                    transaction_id=systemsTraceAuditNumber,
                                    transaction_time=payload["localTransactionDateTime"],
@@ -219,9 +263,11 @@ class ReceivePayment(Resource):
                                    merchant_name=merchant.name,
                                    status=status_code
                                    )
+            # saving history in the database
             history.save_to_db()
             return {"msg": INTERNAL_SERVER_ERROR}, 500
 
+        # payment approved by visa pull funds transfer api
         if response.status_code == 200:
             if flag:
                 payloadAuthApi = {
@@ -230,8 +276,11 @@ class ReceivePayment(Resource):
                     'systemsTraceAuditNumber': systemsTraceAuditNumber,
                     'code': response.status_code
                 }
+                # Sending confirmation of transaction to Auth api denoted by code of transaction
                 r = VisaNet.TransactionConfirmation(payloadAuthApi)
             status_code = True
+
+        # setting history for payment success
         history = HistoryModel(amount=payload["amount"],
                                transaction_id=systemsTraceAuditNumber,
                                transaction_time=payload["localTransactionDateTime"],
@@ -241,60 +290,8 @@ class ReceivePayment(Resource):
                                merchant_name=merchant.name,
                                status=status_code
                                )
+
+        # Saving history in the database.
         history.save_to_db()
-        # response = FundsTransfer.merchant_push_payments_post_response()
         return response
 
-# class MerchantConfirm(Resource):
-#     @classmethod
-#     def post(cls):
-#         json_data = request.get_json()
-#         merchant_data = merchant_schema.load({"mobile_number": json_data["mobile_number"]},
-#                                              partial=("full_name", "email", "password"))
-#         otp = json_data["OTP"]
-#         merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=merchant_data.mobile_number)
-#         if not merchant:
-#             return {"msg": MERCHANT_NOT_FOUND}, 404
-#         try:
-#             message = merchant.send_otp(otp)
-#         except:
-#             traceback.print_exc()
-#             return {"msg": OTP_FAILED}, 500
-#
-#         return {"msg": OTP_SENT.format(merchant.mobile_number)}, 200
-#
-#     @classmethod
-#     def put(cls):
-#         json_data = request.get_json()
-#         merchant_data = merchant_schema.load({"mobile_number": json_data["mobile_number"]}
-#                                              , partial=("full_name", "email", "password"))
-#         merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=merchant_data.mobile_number)
-#         if not merchant:
-#             return {"msg": MERCHANT_NOT_FOUND}, 404
-#         merchant.activated = True
-#         merchant.save_to_db()
-#         return {"msg": MERCHANT_CONFIRMED.format(merchant.mobile_number)}, 200
-
-
-# {
-#   "acquirerCountryCode": "840",
-#   "acquiringBin": "408999",
-#   "amount" :200,
-#   "businessApplicationId": "PP",
-#    "cardAcceptor": {
-#     "address":{
-#                 "country": "IND",
-#                 "state": "GUJ",
-#                 "zipCode": 132001
-#             },
-#     "idCode": "BBFDD3463",
-#     "name": "Beans",
-#     "terminalId": "ABCDsds"
-# },
-# "localTransactionDateTime": "2020-06-27T13:21:47",
-# "retrievalReferenceNumber": "330000550005",
-# "senderCardExpiryDate": "2015-10",
-# "senderCurrencyCode": "USD",
-# "systemsTraceAuditNumber": "451005",
-# "senderPrimaryAccountNumber": "4895142232120006"
-# }

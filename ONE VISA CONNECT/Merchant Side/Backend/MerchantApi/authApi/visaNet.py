@@ -9,24 +9,44 @@ INTERNAL_SERVER_ERROR = "Internal Server Error"
 class VisaNet:
     @classmethod
     def AmountConfirmation(cls, payload):
-        print("AmountConfirmation")
+        """
+            Checks the Sender Details By calling auth api and checks
+            whether sender has enough money in his wallet or not..
+            :param payload: {
+                'mobile_number' = ******
+                'wallet_name' = *****
+                'merchant_name' = *****
+                'amount' = *****
+                'systemsTraceAuditNumber' = *******
+            }
+            :return: response from auth api.
+        """
         url = "https://virtual-card-auth.herokuapp.com/visa_net/payment"
-        # url = "http://127.0.0.1:5001/visa_net/payment"
+
         try:
             r = requests.put(url, json=payload, headers=headers, timeout=timeout)
-            return r
         except Exception as e:
-            print(e)
             return {"msg": INTERNAL_SERVER_ERROR}, 500
+        return r
 
     @classmethod
     def TransactionConfirmation(cls, payload):
-        print("Confirmation")
+        """
+            Sends Transaction confirmation to wallet api with the help of status_code in payload field.
+            If status_code is 200 then transaction is successful else not and rollback is done.
+            :param payload: {
+                'mobile_number': ******,
+                'pan': ******,
+                'systemsTraceAuditNumber': *******,
+                'code': *****
+            }
+            :return: response from auth api.
+        """
         url = "https://virtual-card-auth.herokuapp.com/visa_net/confirm/payment"
-        # url = "http://127.0.0.1:5001/visa_net/confirm/payment"
+
         try:
             r = requests.put(url, json=payload, headers=headers, timeout=timeout)
-            return r
         except Exception as e:
-            print(e)
             return {"msg": INTERNAL_SERVER_ERROR}, 500
+
+        return r
