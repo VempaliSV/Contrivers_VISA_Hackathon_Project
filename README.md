@@ -84,6 +84,5 @@ This process greatly expands their payment sources and reduces the time of the p
 
 ```
 pip install -r requirements.txt
-
 ```
 
