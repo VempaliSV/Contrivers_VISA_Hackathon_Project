@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-
 import com.example.visa_project.CardActivity;
 import com.example.visa_project.HomeActivity;
 import org.json.JSONObject;
@@ -18,7 +16,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import android.content.Context;
-
 import static com.example.visa_project.API.GetWalletAmount.llWalletProgressBar;
 
 /*

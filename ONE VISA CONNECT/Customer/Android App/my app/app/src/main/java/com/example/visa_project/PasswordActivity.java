@@ -1,11 +1,8 @@
 package com.example.visa_project;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.hanks.passcodeview.PasscodeView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PasswordActivity extends AppCompatActivity {

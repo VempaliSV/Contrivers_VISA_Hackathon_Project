@@ -1,5 +1,4 @@
 package com.example.visa_project;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -13,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.example.visa_project.API.RequestLogin;
 import com.example.visa_project.API.RequestRefresh;
@@ -53,12 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         requestLogin.execute("https://virtual-card-auth.herokuapp.com/login", email, password);
     }
 
-    public void startForgetPassword(View view){
-        Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
-        startActivity(intent);
-    }
-
-
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         View view = getCurrentFocus();
@@ -82,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         final TextInputEditText passwordEditText = findViewById(R.id.editTextPassword);
         final TextInputLayout emailTextInput = findViewById(R.id.inputTextEmail);
         final TextInputEditText emailEditText = findViewById(R.id.editTextEmail);
-        final TextView forgotPasswordTextView = findViewById(R.id.forgetPassTextView);
 
         MaterialButton loginButton = findViewById(R.id.loginButton);
         MaterialButton createNewUserButton = findViewById(R.id.createNewUserButton);
@@ -95,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
         emailTextInput.setAnimation(loginAnim);
         loginButton.setAnimation(loginAnim);
         createNewUserButton.setAnimation(loginAnim);
-        forgotPasswordTextView.setAnimation(loginAnim);
 
         llProgressBar = findViewById(R.id.llProgressBar);
 

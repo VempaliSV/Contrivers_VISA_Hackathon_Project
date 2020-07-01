@@ -1,5 +1,4 @@
 package com.example.visa_project;
-
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -13,11 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Pair;
-
 import com.example.visa_project.utils.ISOCodes;
 
 public class StartActivity extends AppCompatActivity{

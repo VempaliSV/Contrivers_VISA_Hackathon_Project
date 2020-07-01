@@ -1,5 +1,4 @@
 package com.example.visa_project;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,7 +7,6 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.visa_project.API.RequestLogout;
 import com.example.visa_project.HomeActivityFragments.History.FragmentHistory;
 import com.example.visa_project.HomeActivityFragments.FragmentHome;
@@ -16,7 +14,6 @@ import com.example.visa_project.HomeActivityFragments.Wallets.FragmentWallets;
 import com.example.visa_project.SessionManager.SessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +43,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         RequestLogout requestLogout = new RequestLogout(HomeActivity.this);
         requestLogout.execute("https://virtual-card-auth.herokuapp.com/logout", access_token);
-        //requestLogout.execute("http://10.0.2.2:5001/logout", access_token);
     }
 
     @Override

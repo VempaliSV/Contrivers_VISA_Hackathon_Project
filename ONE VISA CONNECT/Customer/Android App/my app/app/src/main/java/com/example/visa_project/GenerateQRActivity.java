@@ -1,7 +1,5 @@
 package com.example.visa_project;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Point;

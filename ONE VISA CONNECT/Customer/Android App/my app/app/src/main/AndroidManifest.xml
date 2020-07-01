@@ -20,7 +20,6 @@
         <activity android:name=".PaymentMethodActivity" />
         <activity android:name=".OTPActivity" />
         <activity android:name=".StartActivity" />
-        <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".ScanQRActivity" />
         <activity android:name=".PasswordActivity" />

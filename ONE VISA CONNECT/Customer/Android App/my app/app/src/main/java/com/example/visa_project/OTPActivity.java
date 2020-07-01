@@ -1,8 +1,6 @@
 package com.example.visa_project;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +8,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.EditText;
-
 import com.example.visa_project.API.SendOTP;
 import com.example.visa_project.API.VerifyOTP;
-import com.example.visa_project.MLE.RSA;
-
 import java.sql.Timestamp;
 import java.util.Random;
 
@@ -26,12 +21,11 @@ public class OTPActivity extends AppCompatActivity {
 
     public void generateOTP(){
         generationTime = new Timestamp(System.currentTimeMillis());
-        OTP = "123456";
-//        Random random = new Random();
-//        for(int i=0;i<6;i++){
-//            int digit = random.nextInt(10);
-//            OTP += String.valueOf(digit);
-//        }
+        Random random = new Random();
+        for(int i=0;i<6;i++){
+            int digit = random.nextInt(10);
+            OTP += String.valueOf(digit);
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -53,10 +47,8 @@ public class OTPActivity extends AppCompatActivity {
             return;
         }
         // activate user
-        RSA cipher = new RSA(OTPActivity.this);
         VerifyOTP verifyOTP = new VerifyOTP(OTPActivity.this);
         try {
-            //String encryptedMobileNumber = cipher.encrypt(mobile_number);
             llProgressBar.setVisibility(View.VISIBLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
@@ -69,11 +61,8 @@ public class OTPActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void sendOTP(View view){
         generateOTP();
-        RSA cipher = new RSA(OTPActivity.this);
         SendOTP sendOTP = new SendOTP(OTPActivity.this);
         try {
-            //String encryptedMobileNumber = cipher.encrypt(mobile_number);
-            //String encryptedOTP = cipher.encrypt(OTP);
             sendOTP.execute("https://virtual-card-auth.herokuapp.com/otp", mobile_number, OTP);
         }catch (Throwable throwable){
             throwable.printStackTrace();

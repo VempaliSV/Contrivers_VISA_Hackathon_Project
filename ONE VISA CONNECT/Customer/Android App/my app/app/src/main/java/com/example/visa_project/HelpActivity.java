@@ -1,5 +1,4 @@
 package com.example.visa_project;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
