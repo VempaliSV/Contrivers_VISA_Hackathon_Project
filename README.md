@@ -198,3 +198,6 @@ getPan.execute(Enter Server Port of Customer API)
 OnCreate
 requestPayment.execute(Enter Server Port of Customer API)
 ```
+
+#### Merchant Application
+
