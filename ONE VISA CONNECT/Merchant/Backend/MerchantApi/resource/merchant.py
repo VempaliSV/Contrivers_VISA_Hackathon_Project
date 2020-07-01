@@ -130,11 +130,6 @@ class Merchant(Resource):
             return {"msg": MERCHANT_NOT_FOUND}, 404
         return merchant_schema.dump(merchant), 200
 
-<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
-=======
-
->>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
-
 class MerchantLogout(Resource):
     @classmethod
     @jwt_required
@@ -194,10 +189,6 @@ class ReceivePayment(Resource):
         payload["retrievalReferenceNumber"] = RetrievalNo.No() + str(systemsTraceAuditNumber)
 
         payload["senderPrimaryAccountNumber"] = "4895142232120006"
-<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
-=======
-        
->>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
 
         # customer mobile number present in the qr scanned by merchant
         mobile_number = ""
@@ -229,11 +220,6 @@ class ReceivePayment(Resource):
 
             # call to authApi for confirmation of amount entered by customer.
             r = VisaNet.AmountConfirmation(payloadAuthApi)
-<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
-
-=======
-            
->>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
             if r.status_code != 200:
                 # Updating History for transaction failure.
                 history = HistoryModel(amount=payload["amount"],
@@ -306,9 +292,5 @@ class ReceivePayment(Resource):
 
         # Saving history in the database.
         history.save_to_db()
-<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
-=======
-        
->>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
         return response
 
