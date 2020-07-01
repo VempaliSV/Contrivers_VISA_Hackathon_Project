@@ -1,7 +1,7 @@
 # **Contrivers VISA Hackathon Project**
 
 
-### Overview
+## Overview
 Our idea thrives to promote cashless payments by integrating the usage of E-wallets and VISA payment services.We are providing an Open-Loop transaction system for e-Wallets which are usually a part of the Close-Loop transaction system by leveraging Visa APIs. 
 In the present case scenario, e-Wallets are not admissible in all market segments but with the help of One Visa Connect customers would be able to have a seamless & secure virtual payment experience by being a part of Visa’s global network.
 
@@ -11,7 +11,7 @@ This process greatly expands their payment sources and reduces the time of the p
 
 
 
-### Tech
+## Tech
 
 * *JAVA* - Java programing language used for android development
 * *Material Design* - Material is a design system – backed by open-source code – that helps teams build high-quality digital experiences.
@@ -21,6 +21,8 @@ This process greatly expands their payment sources and reduces the time of the p
 * *Flask* - Flask is a micro web framework written in Python.
 * *SQLAlchemy* - SQLAlchemy is an open-source SQL toolkit and object-relational mapper for the Python programming language.
 * *SQLite/Postgres/MySQL*- Relational database management system emphasizing extensibility and SQL compliance. 
+---
+## How to get Started
 ### Installation
 
 Install the dependencies and devDependencies and start the server.
@@ -35,6 +37,12 @@ Minimum SDK version 21\
 Target SDK version 28\
 Compile SDK version 28\
 Version Code 1
+
+#### Customer Application
+```sh
+4-Digit PIN default 1234
+6-Digit OTP default 123456
+```
 
 ### Development
 ---
@@ -133,11 +141,7 @@ WALLET_KEY generate via fernet \
 DATABASE_URI \
 SECRET_KEY
 
-### Mobile Application
-#### Customer Application
-```sh
-4-Digit PIN default 1234
-6-Digit OTP default 123456
-```
+### Customer Application
+
 
  
