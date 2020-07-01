@@ -1,5 +1,5 @@
 # **Contrivers VISA Hackathon Project**
----
+
 
 ### Overview
 Our idea thrives to promote cashless payments by integrating the usage of E-wallets and VISA payment services.We are providing an Open-Loop transaction system for e-Wallets which are usually a part of the Close-Loop transaction system by leveraging Visa APIs. 
