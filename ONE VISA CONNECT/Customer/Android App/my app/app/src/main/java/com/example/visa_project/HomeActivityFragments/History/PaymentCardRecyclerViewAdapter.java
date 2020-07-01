@@ -36,7 +36,7 @@ public class PaymentCardRecyclerViewAdapter extends RecyclerView.Adapter<Payment
             holder.orderNumber.setText(("Order Number : " + payment.transaction_id));
             holder.dateTime.setText(payment.transaction_time);
             holder.merchantOperator.setText(("Paid to : " + payment.merchant_name));
-            holder.orderResponse.setText(("Your Payment is "+ payment.status));
+            holder.orderResponse.setText(("Payment : "+ payment.status));
         }
     }
 
