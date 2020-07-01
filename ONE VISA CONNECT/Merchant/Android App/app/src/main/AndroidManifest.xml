@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.merchantapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/visa_merchant"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Visa">
+        <activity android:name=".GenerateQRActivity"></activity>
+        <activity android:name=".PaymentResultActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".AmountActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home2"
+            android:theme="@style/Theme.Visa.NoActionBar" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".StartActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ScanQRActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+</manifest>

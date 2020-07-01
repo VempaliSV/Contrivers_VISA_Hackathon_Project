@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:importantForAutofill="noExcludeDescendants"
+tools:ignore="UnusedAttribute">
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginPageBackgroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:paddingTop="16dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:layout_width="307dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="13dp"
+            android:transitionName="icon"
+            app:srcCompat="@drawable/merchantlogo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:transitionName="slogan"
+            android:layout_height="0dp">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="@string/hint_email"
+            app:startIconDrawable="@drawable/email_icon"
+            app:boxStrokeColor="#1B3F9A"
+            app:hintTextColor="#1B3F9A">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="@string/hint_password"
+            app:startIconDrawable="@drawable/password_lock"
+            app:boxStrokeColor="#1B3F9A"
+            app:hintTextColor="#000000"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:shadowColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/login"
+            android:textSize="14sp"
+            app:backgroundTint="@color/visaBlue"
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createNewUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/create_new_user"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:backgroundTint="@color/visaOrange">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <!-- Snippet from "Add text fields" section goes here. -->
+
+        <!-- Snippet from "Add buttons" section goes here. -->
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+<include
+    android:id="@+id/llProgressBar"
+    android:visibility="gone"
+    layout="@layout/layout_progess_bar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

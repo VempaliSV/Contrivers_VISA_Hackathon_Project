@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/paymentCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="2dp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/transactionId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:text="Order Number : 3241234"
+            android:textColor="@color/text_black"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/amountReceived"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:text="Amount : 250"
+            android:textColor="@color/text_black"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/transactionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transactionId"
+            android:layout_marginStart="10dp"
+            android:text="10:00 AM 23 Jun 2020">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/orderResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transactionTime"
+            android:layout_marginStart="10dp"
+            android:text="Your order is successful"
+            android:textColor="@color/text_black"
+            android:textSize="22sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/customerMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderResponse"
+            android:layout_marginStart="10dp"
+            android:text="Payment to MerchantOperator"
+            android:textColor="@color/text_black">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/walletName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customerMobile"
+            android:text="Done by xyz"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/visaBlue">
+
+        </TextView>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

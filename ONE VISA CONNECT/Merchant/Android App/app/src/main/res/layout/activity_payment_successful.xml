@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/paymentDone"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/payment_done"
+        android:layout_marginTop="80dp">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/thankYou"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/paymentDone"
+        android:text="@string/thank_you"
+        android:textSize="50sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/text_black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/paymentSuccessful"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_below="@+id/thankYou"
+        android:gravity="center_horizontal"
+        android:text="@string/payment_done"
+        android:textColor="@color/text_black"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paymentSuccessful"
+        app:backgroundTint="@color/done_green"
+        android:text="@string/done"
+        android:layout_marginTop="80dp"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true">
+
+    </com.google.android.material.button.MaterialButton>
+
+</RelativeLayout>
