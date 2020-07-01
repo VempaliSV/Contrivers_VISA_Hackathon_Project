@@ -17,6 +17,7 @@ This process greatly expands their payment sources and reduces the time of the p
 * *Material UI* - 
 * *VisaParserSDK-3.2.0* - 
 * *Visa GeneratorSDK-3.2.0* - 
+* *zxing* - 
 * *Flask* -
 * *SQLAlchemy* - 
 * *SQLite/Postgres/MySQL*-
