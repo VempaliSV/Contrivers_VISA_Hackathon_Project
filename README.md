@@ -28,7 +28,7 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 pip install -r requirements.txt
 ```
-### Android Dependecies
+#### Android Dependecies
 **Build Gradle Requirments**\
 Minimum SDK version 21 \
 Android Studio Version 5.0\
