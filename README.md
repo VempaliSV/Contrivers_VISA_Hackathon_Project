@@ -150,15 +150,15 @@ RSA Private Key as private.pem
 ```
 **Login Activity**
 ```sh
-Request Login
+login
 requestLogin.execute(Enter Server Port of Customer API)
-Request Refresh 
+onCreate
 requestRefresh.execute(Enter Server Port of Customer API)
 ```
 **Register Activity**
 
 ```sh
-Request Register
+register
 requestRegister.execute(Enter Server Port of Customer API)
 ```
 
@@ -171,28 +171,28 @@ verifyOTP.execute(Enter Server Port of Customer API)
 ```
 **Home Activity**
 ```sh
-Request Logout
+logout
 requestLogout.execute(Enter Server Port of Customer API)
 ```
 **HomeActivityFragments/Wallets/FragmentWallets**
 ```sh
-getWalletAmount
+onCreateView
 getWalletAmount.execute(Enter Server Port of Customer API)
 ```
 **HomeActivityFragments/History/FragmentHistory**
 ```sh
-RequestHistory
+onCreateView
 requestHistory.execute(Enter Server Port of Customer API)
-```
-**API/GetWalletAmount**
-```sh
-getWalletAmount
-getWalletAmount.execute(Enter Server Port of Customer API)
 ```
 **API/CheckCard**
 ```sh
-OnPostExecute
+onWalletClick
 checkCard.execute(Enter Server Port of Customer API)
+```
+**API/GenerateCard**
+```sh
+onPostExecute
+generateCard.execute(Enter Server Port of Customer API)
 ```
 **GenrateQRActivity**
 ```sh
@@ -208,28 +208,28 @@ requestPayment.execute(Enter Server Port of Customer API)
 ### Merchant Application
 **Login Activity**
 ```sh
-Request Login
+Login
 requestLogin.execute(Enter Server Port of Customer API)
-Request Refresh 
+onCreate
 requestRefresh.execute(Enter Server Port of Customer API)
 ```
 **Register Activity**
 ```sh
-Request Register
+Register
 requestRegister.execute(Enter Server Port of Customer API)
 ```
 **Home Activity**
 ```sh
-Request Logout
+Logout
 requestLogout.execute(Enter Server Port of Customer API)
 ```
 **Home Activity**
 ```sh
-RequestHistory
+onCreate
 requestHistory.execute(Enter Server Port of Customer API)
 ```
 **Payment Result Activity**
 ```sh
-RequestPayment
+onCreate
 requestPayment.execute(Enter Server Port of Customer API)
 ```
