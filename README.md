@@ -15,7 +15,7 @@ This process greatly expands their payment sources and reduces the time of the p
 
 * *JAVA* - Java programing language used for android development
 * *Material Design* - Material is a design system – backed by open-source code – that helps teams build high-quality digital experiences.
-* *VisaParserSDK-3.2.0* - SDK for use by an Issuer for mobile app development.
+* *Visa ParserSDK-3.2.0* - SDK for use by an Issuer for mobile app development.
 * *Visa GeneratorSDK-3.2.0* - Mobile Push Payment Acquirer/Merchant SDK for QR generation.
 * *zxing* - barcode image processing library implemented in Java, with ports to other languages. 
 * *Flask* - Flask is a micro web framework written in Python.
