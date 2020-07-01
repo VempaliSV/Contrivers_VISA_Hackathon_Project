@@ -30,14 +30,16 @@ pip install -r requirements.txt
 ```
 #### Android Dependecies
 **Build Gradle Requirments**\
+Android Studio Version 4.0\
 Minimum SDK version 21 \
-Android Studio Version 5.0\
 Target SDK version 28\
 Compile SDK version 28\
 Version Code 1
 
 ### Development
 ---
+###*Customer*
+
 #### Customer API
 
 **Installation**
@@ -127,3 +129,5 @@ Set according to your requirements \
 WALLET_KEY generate via fernet \
 DATABASE_URI= \
 SECRET_KEY= 
+
+#### 
