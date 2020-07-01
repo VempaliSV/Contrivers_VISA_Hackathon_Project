@@ -22,5 +22,4 @@ class Encryption:
                 data[i] = str(data[i])
             encrypted_data[i] = \
                 f.encrypt(bytes(data[i], 'ascii')).decode('ascii')
-        # print(type(encrypted_data),encrypted_data)
         return encrypted_data

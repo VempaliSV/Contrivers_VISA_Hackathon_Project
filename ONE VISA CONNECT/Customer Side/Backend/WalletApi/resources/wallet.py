@@ -25,7 +25,7 @@ class Wallet(Resource):
                                           }
         """
         data = request.get_json()
-        # data = Decyption.decrypt(request.get_json())
+        data = Decryption.decrypt(request.get_json())
         mobile_number = data["mobile_number"]
         wallet = WalletModel.find_by_mobile_number(mobile_number)
         if wallet is None:
@@ -54,6 +54,7 @@ class WalletAmountPay(Resource):
         :return: {"message": "Encrypted message"}
         """
         data = request.get_json()
+        data = Decryption.decrypt(request.get_json())
         wallet = WalletModel.find_by_mobile_number(data["mobile_number"])
         if wallet is None:
             return Encryption.encrypt(
@@ -92,10 +93,11 @@ class WalletAmountAdd(Resource):
             returns a encrypted message.
         """
         data = request.get_json()
+        data = Decryption.decrypt(request.get_json())
         wallet = WalletModel.find_by_mobile_number(data["mobile_number"])
         if wallet is None:
             return Encryption.encrypt(
-                {"message": gettext("WALLET_NOT_FOUND").format(data[mobile_number])}
+                {"message": gettext("WALLET_NOT_FOUND").format(data["mobile_number"])}
             ), 400
         try:
             wallet.add_amount(data["amount"])
