@@ -1,0 +1,24 @@
+{
+  "mailgun_failed_load_api_key": "Failed to load MailGun API key.",
+  "mailgun_failed_load_domain": "Failed to load MailGun domain.",
+  "mailgun_error_send_email": "Error in sending confirmation email, user registration failed.",
+
+  "confirmation_not_found": "Confirmation reference not found.",
+  "confirmation_link_expired": "The link has expired.",
+  "confirmation_already_confirmed": "Registration has already been confirmed.",
+  "confirmation_resend_fail": "Internal server error. Failed to resend confirmation email.",
+  "confirmation_resend_successful": "E-mail confirmation successfully re-sent.",
+
+  "user_username_exists": "A user with that username already exists.",
+  "user_email_exists": "A user with that email already exists.",
+  "user_not_found": "User not found.",
+  "user_deleted": "User deleted.",
+  "user_invalid_credentials": "Invalid credentials!",
+  "user_logged_out": "User <id={}> successfully logged out.",
+  "user_not_confirmed": "You have not confirmed registration, please check your email <{}>.",
+  "user_error_creating": "Internal server error. Failed to create user.",
+  "user_registered": "Account created successfully, an email with an activation link has been sent to your email address, please check.",
+
+  "mobile_number_already_registered": "Mobile Number: '{}' is already registered"
+
+}

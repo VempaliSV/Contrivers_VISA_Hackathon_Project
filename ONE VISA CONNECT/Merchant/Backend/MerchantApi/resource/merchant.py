@@ -1,7 +1,7 @@
 import traceback
 import uuid
 import time
-from datetime import datetime
+from datetime import datetime,timedelta
 from pprint import pprint
 
 from flask import request
@@ -112,7 +112,8 @@ class MerchantLogin(Resource):
         elif merchant.password != merchant_password:
             return {"msg": INVALID_PASSWORD}, 401
         
-        access_token = create_access_token(identity=merchant.id, fresh=True)
+        expires  = timedelta(days= 1)
+        access_token = create_access_token(identity=merchant.id,expires_delta= expires ,fresh=True)
         refresh_token = create_refresh_token(identity=merchant.id)
         return {"access_token": access_token, "refresh_token": refresh_token,
                 "merchant": merchant_schema.dump(merchant)}, 200
@@ -129,6 +130,10 @@ class Merchant(Resource):
             return {"msg": MERCHANT_NOT_FOUND}, 404
         return merchant_schema.dump(merchant), 200
 
+<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
+=======
+
+>>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
 
 class MerchantLogout(Resource):
     @classmethod
@@ -189,6 +194,10 @@ class ReceivePayment(Resource):
         payload["retrievalReferenceNumber"] = RetrievalNo.No() + str(systemsTraceAuditNumber)
 
         payload["senderPrimaryAccountNumber"] = "4895142232120006"
+<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
+=======
+        
+>>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
 
         # customer mobile number present in the qr scanned by merchant
         mobile_number = ""
@@ -220,7 +229,11 @@ class ReceivePayment(Resource):
 
             # call to authApi for confirmation of amount entered by customer.
             r = VisaNet.AmountConfirmation(payloadAuthApi)
+<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
 
+=======
+            
+>>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
             if r.status_code != 200:
                 # Updating History for transaction failure.
                 history = HistoryModel(amount=payload["amount"],
@@ -293,5 +306,9 @@ class ReceivePayment(Resource):
 
         # Saving history in the database.
         history.save_to_db()
+<<<<<<< HEAD:ONE VISA CONNECT/Merchant Side/Backend/MerchantApi/resource/merchant.py
+=======
+        
+>>>>>>> ac2062c83a7c58e1151ca4fa8ec79c086fdde833:ONE VISA CONNECT/Merchant/Backend/MerchantApi/resource/merchant.py
         return response
 
