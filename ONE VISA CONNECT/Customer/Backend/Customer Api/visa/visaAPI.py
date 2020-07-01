@@ -2,7 +2,7 @@ import os
 import requests
 
 userName = os.getenv("VISA_USER_NAME")
-password = os.getenv("PASSWORD")
+password = os.getenv("VISA_PASSWORD")
 
 certificatePath = './VisaCert/cert.pem'  # insert cert.pem issued in VisaCert folder
 privateKeyPath = './VisaCert/privateKey.pem'  # insert privateKey.pem issued in VisaCert folder

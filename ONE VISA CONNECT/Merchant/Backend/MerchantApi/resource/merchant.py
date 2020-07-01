@@ -1,7 +1,7 @@
 import traceback
 import uuid
 import time
-from datetime import datetime
+from datetime import datetime,timedelta
 from pprint import pprint
 
 from flask import request
@@ -79,10 +79,9 @@ class MerchantLogin(Resource):
             return {"msg": MERCHANT_NOT_FOUND.format(merchant_email)}, 401
         elif merchant.password != merchant_password:
             return {"msg": INVALID_PASSWORD}, 401
-        # elif not merchant.activated:
-        #     return {"msg": MERCHANT_NOT_CONFIRMED.format(merchant.mobile_number)}, 400
         
-        access_token = create_access_token(identity=merchant.id, fresh=True)
+        expires  = timedelta(days= 1)
+        access_token = create_access_token(identity=merchant.id,expires_delta= expires ,fresh=True)
         refresh_token = create_refresh_token(identity=merchant.id)
         return {"access_token": access_token, "refresh_token": refresh_token,
                 "merchant": merchant_schema.dump(merchant)}, 200
@@ -98,15 +97,6 @@ class Merchant(Resource):
             return {"msg": MERCHANT_NOT_FOUND}, 404
         return merchant_schema.dump(merchant), 200
 
-    # # just for testing
-    # @classmethod
-    # def delete(cls, mobile_number):
-    #     merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=mobile_number)
-    #     if not merchant:
-    #         return {"msg": MERCHANT_NOT_FOUND.format(mobile_number)}, 404
-    # 
-    #     merchant.delete_from_db()
-    #     return {"msg": MERCHANT_DELETED.format(merchant.email)}, 200
 
 
 class MerchantLogout(Resource):
@@ -162,7 +152,7 @@ class ReceivePayment(Resource):
         payload["retrievalReferenceNumber"] = RetrievalNo.No() + str(systemsTraceAuditNumber)
 
         payload["senderPrimaryAccountNumber"] = "4895142232120006"
-        # print(payload)
+        
 
         mobile_number = ""
         wallet_name = ""
@@ -181,8 +171,7 @@ class ReceivePayment(Resource):
             payloadAuthApi["amount"] = payload["amount"]
             payloadAuthApi["systemsTraceAuditNumber"] = systemsTraceAuditNumber
             r = VisaNet.AmountConfirmation(payloadAuthApi)
-            print(r)
-            print(r.json())
+            
             if r.status_code != 200:
                 history = HistoryModel(amount=payload["amount"],
                                        transaction_id=systemsTraceAuditNumber,
@@ -242,59 +231,6 @@ class ReceivePayment(Resource):
                                status=status_code
                                )
         history.save_to_db()
-        # response = FundsTransfer.merchant_push_payments_post_response()
+        
         return response
 
-# class MerchantConfirm(Resource):
-#     @classmethod
-#     def post(cls):
-#         json_data = request.get_json()
-#         merchant_data = merchant_schema.load({"mobile_number": json_data["mobile_number"]},
-#                                              partial=("full_name", "email", "password"))
-#         otp = json_data["OTP"]
-#         merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=merchant_data.mobile_number)
-#         if not merchant:
-#             return {"msg": MERCHANT_NOT_FOUND}, 404
-#         try:
-#             message = merchant.send_otp(otp)
-#         except:
-#             traceback.print_exc()
-#             return {"msg": OTP_FAILED}, 500
-#
-#         return {"msg": OTP_SENT.format(merchant.mobile_number)}, 200
-#
-#     @classmethod
-#     def put(cls):
-#         json_data = request.get_json()
-#         merchant_data = merchant_schema.load({"mobile_number": json_data["mobile_number"]}
-#                                              , partial=("full_name", "email", "password"))
-#         merchant = MerchantModel.find_merchant_by_mobile_number(mobile_number=merchant_data.mobile_number)
-#         if not merchant:
-#             return {"msg": MERCHANT_NOT_FOUND}, 404
-#         merchant.activated = True
-#         merchant.save_to_db()
-#         return {"msg": MERCHANT_CONFIRMED.format(merchant.mobile_number)}, 200
-
-
-# {
-#   "acquirerCountryCode": "840",
-#   "acquiringBin": "408999",
-#   "amount" :200,
-#   "businessApplicationId": "PP",
-#    "cardAcceptor": {
-#     "address":{
-#                 "country": "IND",
-#                 "state": "GUJ",
-#                 "zipCode": 132001
-#             },
-#     "idCode": "BBFDD3463",
-#     "name": "Beans",
-#     "terminalId": "ABCDsds"
-# },
-# "localTransactionDateTime": "2020-06-27T13:21:47",
-# "retrievalReferenceNumber": "330000550005",
-# "senderCardExpiryDate": "2015-10",
-# "senderCurrencyCode": "USD",
-# "systemsTraceAuditNumber": "451005",
-# "senderPrimaryAccountNumber": "4895142232120006"
-# }
