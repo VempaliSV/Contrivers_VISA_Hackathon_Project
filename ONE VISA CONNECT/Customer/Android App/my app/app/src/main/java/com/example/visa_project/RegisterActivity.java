@@ -89,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_activity);
+        setContentView(R.layout.activity_register);
 
         String[] countries = {"India", "United States of America"};
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<String>

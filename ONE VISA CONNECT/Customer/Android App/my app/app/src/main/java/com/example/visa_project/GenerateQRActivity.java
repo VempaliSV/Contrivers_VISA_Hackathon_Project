@@ -20,7 +20,7 @@ public class GenerateQRActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.generate_qr_activity);
+        setContentView(R.layout.activity_generate_qr);
         llProgressBar = findViewById(R.id.llProgressBar);
         qrImageView = findViewById(R.id.qrImageView);
 

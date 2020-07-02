@@ -34,7 +34,7 @@ public class AmountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.amount_activity);
+        setContentView(R.layout.activity_amount);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         amountEditText = findViewById(R.id.amountEditText);
     }

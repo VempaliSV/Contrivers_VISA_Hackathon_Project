@@ -41,7 +41,7 @@ public class StartActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_activity);
+        setContentView(R.layout.activity_start);
 
         isoCodes = new ISOCodes();
 

@@ -29,7 +29,7 @@
     <string name="history">History</string>
     <string name="wallets">Wallets</string>
 
-    <!-- strings in register_activity activity-->
+    <!-- strings in activity_register activity-->
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
     <string name="hint_number">Mobile Number</string>

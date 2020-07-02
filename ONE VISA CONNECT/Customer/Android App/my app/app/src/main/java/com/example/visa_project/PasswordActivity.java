@@ -11,7 +11,7 @@ public class PasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pin_activity);
+        setContentView(R.layout.activity_pin);
         passcodeView= findViewById(R.id.passcodeView);
         passcodeView.setPasscodeLength(4).setLocalPasscode("1234").setListener(new PasscodeView.PasscodeViewListener() {
             @Override

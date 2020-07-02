@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.activity_login);
 
         final TextInputLayout passwordTextInput = findViewById(R.id.inputTextPassword);
         final TextInputEditText passwordEditText = findViewById(R.id.editTextPassword);
@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // Open the register_activity activity
+        // Open the activity_register activity
         createNewUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
