@@ -113,7 +113,7 @@ public class GetWalletAmount extends AsyncTask<String, Void, String> implements 
                 // making the JSONArray for wallets (this array contains all the wallets' information in JSON format)
                 JSONArray walletArray = new JSONArray();
                 JSONObject wallet = new JSONObject();
-                wallet.put("walletName", "Demo Wallet");
+                wallet.put("walletName", "Playtm");
                 wallet.put("url", "https://nuwallpaperhd.info/wp-content/uploads/2018/01/Awesome-Abstract-Background-Wallpapers.jpg"); // sample image
                 wallet.put("amount", status);
                 walletArray.put(wallet);
