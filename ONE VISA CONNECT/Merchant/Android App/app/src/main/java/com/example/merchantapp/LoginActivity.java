@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         //String encryptedEmail = cipher.encrypt(email);
         //String encryptedPassword  = cipher.encrypt(password);
         RequestLogin requestLogin = new RequestLogin(LoginActivity.this);
-        requestLogin.execute("https://merchant-api-v1.herokuapp.com/login", email, password);
+        requestLogin.execute("Enter server port" + "/login", email, password);
     }
 
     @Override
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 // CALL API by providing refresh Token
                 RequestRefresh requestRefresh = new RequestRefresh(LoginActivity.this);
-                requestRefresh.execute("https://merchant-api-v1.herokuapp.com/refresh");
+                requestRefresh.execute("Enter server port" + "/refresh");
             }
             else {
                 Intent newIntent = new Intent(LoginActivity.this, HomeActivity.class);

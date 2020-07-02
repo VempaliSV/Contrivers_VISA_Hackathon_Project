@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         RequestRegister requestRegister = new RequestRegister(RegisterActivity.this);
-        requestRegister.execute("https://merchant-api-v1.herokuapp.com/register", email, password, mobileNumber, username,country,state,zipCode);
+        requestRegister.execute("Enter server port" + "/register", email, password, mobileNumber, username,country,state,zipCode);
     }
 
     public boolean isPasswordValid(String password){

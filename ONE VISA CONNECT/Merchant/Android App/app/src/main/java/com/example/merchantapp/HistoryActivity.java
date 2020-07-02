@@ -29,7 +29,7 @@ public class HistoryActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         RequestHistory requestHistory = new RequestHistory(HistoryActivity.this);
-        requestHistory.execute("https://merchant-api-v1.herokuapp.com/transaction/history");
+        requestHistory.execute("Enter server port" + "/transaction/history");
 
         int largePadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.wallet_grid_spacing_small);
