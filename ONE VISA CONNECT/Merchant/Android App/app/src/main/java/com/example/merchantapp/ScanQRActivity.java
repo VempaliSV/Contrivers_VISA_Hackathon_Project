@@ -19,7 +19,7 @@ public class ScanQRActivity extends AppCompatActivity implements ZXingScannerVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scan_qr_activity);
+        setContentView(R.layout.activity_scan_qr);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_DENIED){
