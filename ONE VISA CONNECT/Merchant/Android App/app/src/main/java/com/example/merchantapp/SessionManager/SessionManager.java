@@ -101,6 +101,6 @@ public class SessionManager {
 
     public boolean isTimeOver(){
         Timestamp timeNow = new Timestamp(System.currentTimeMillis());
-        return ((timeNow.getTime() - pref.getLong(LOGIN_TIME,0)) > 3600000); // 60 minutes or 3600000 ms
+        return ((timeNow.getTime() - pref.getLong(LOGIN_TIME,0)) > 3600000); // 1 hr
     }
 }
